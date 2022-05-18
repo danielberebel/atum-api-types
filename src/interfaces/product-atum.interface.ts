@@ -7,6 +7,7 @@ import {
     SelectableInventoriesModeType,
     GlobalBooleanStringType
 } from '../../types';
+import { MetaDataAtumInterface } from './meta-data-atum.interface';
 
 type OmitProperties = 'images' | 'categories' | 'variations' | 'attributes'; // ignore to change type
 
@@ -95,7 +96,7 @@ export interface ProductAtumInterface extends Omit<ProductWcInterface, OmitPrope
     meta_data?: ProductMetaDataAtumInterface[];
 
     // Atum
-    purchase_price?: number;
+    purchase_price?: string;
 
     supplier_id?: number;
     supplier_sku?: string;
@@ -131,7 +132,7 @@ export interface ProductAtumInterface extends Omit<ProductWcInterface, OmitPrope
     price_per_inventory?: GlobalBooleanStringType;
 
     // Product Levels
-    linked_bom?: ProductBOMAtumInterface[];
+    linked_bom?: LinkedBOMAtumInterface[];
     is_bom?: boolean;
     sync_purchase_price?: boolean;
 
@@ -145,6 +146,11 @@ export interface ProductAtumInterface extends Omit<ProductWcInterface, OmitPrope
     // missing
     upsells?: number[];
     crossSells?: number[];
+
+    /**
+     * @description when product has low stock and need restock
+     */
+    restock_status?: boolean;
 
     low_stock_threshold?: number;
     calc_back_orders?: number;
@@ -167,8 +173,8 @@ export interface ProductDefaultAttributeAtumInterface {
     option: string;
 }
 
-export interface ProductMetaDataAtumInterface {
-    id: number;
+export interface ProductMetaDataAtumInterface extends MetaDataAtumInterface {
+    id?: number;
     key: string;
     value: string;
 }
@@ -179,10 +185,10 @@ export interface ProductLocationAtumInterface {
     slug: string;
 }
 
-export interface ProductBOMAtumInterface {
+export interface LinkedBOMAtumInterface {
     bom_id: number;
     bom_type: string;
-    qty: number;
+    qty: string;
     delete: boolean;
 }
 

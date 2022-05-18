@@ -11,4 +11,5 @@ export interface CategoryAtumInterface extends Partial<Omit<CategoryWcInterface,
     count: number;
     deleted?: boolean;
     is_default?: string;
+    barcode?: string;
 }

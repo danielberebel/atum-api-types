@@ -2,7 +2,8 @@ export interface LocationAtumInterface {
     id?: number;
     name: string;
     slug: string;
-    barcode?: string; // SYNC: pending to add
+    code?: string; // SYNC: pending to add
+    barcode?: string; 
     description?: string;
     parent?: number;
     count?: number;

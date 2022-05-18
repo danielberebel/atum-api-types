@@ -30,6 +30,7 @@ export interface SupplierAtumInterface {
     location?: string;
     image?: SupplierImageAtumInterface;
     meta_data?: SupplierMetaDataAtumInterface[];
+    barcode?: string;
 }
 
 export interface SupplierImageAtumInterface extends ImageRelationAtumInterface {

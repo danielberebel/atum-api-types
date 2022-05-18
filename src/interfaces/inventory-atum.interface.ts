@@ -32,9 +32,11 @@ export interface InventoryAtumInterface {
 export interface InventoryMetaDataAtumInterface {
     //extends MetaDataAtumInterface
     sku?: string; // Inventory's SKU.
+    barcode?: string;
     manage_stock?: boolean; // Whether the stock is being managed for the inventory.
     stock_quantity?: number; // Inventory's stock amount.
-    backorders?: boolean; // Whether the back orders are allowed.
+    // backorders?: boolean; // Whether the back orders are allowed.
+    backorders?: string;
     stock_status?: string; // Inventory's stock status.
     supplier_id?: number; // Inventory supplier's ID.
     supplier_sku?: string; // Inventory supplier's SKU.

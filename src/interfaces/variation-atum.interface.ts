@@ -3,13 +3,15 @@ import {
     GlobalBooleanStringType,
     InventoryIterationType,
     InventorySortingModeType,
-    SelectableInventoriesModeType,
+    SelectableInventoriesModeType
 } from '../../types';
+import { LinkedBOMAtumInterface } from './product-atum.interface';
 
 export interface VariationAtumInterface {
     id?: number; // READ-ONLY
     slug?: string;
     product_id?: number; // Create-Only
+    parent_id?: number; // READ-ONLY
     date_created?: string; // READ-ONLY
     date_created_gmt?: string; // READ-ONLY
     date_modified?: string; // READ-ONLY
@@ -83,14 +85,19 @@ export interface VariationAtumInterface {
     inventory_selection_mode?: SelectableInventoriesModeType;
     selectable_inventories?: GlobalBooleanStringType;
 
-    // product levels properties
-    linked_bom?: VariationBOMAtumInterface[];
-    bom_sellable?: number[];
+    // Product Levels
+    linked_bom?: LinkedBOMAtumInterface[];
+    is_bom?: boolean;
+    sync_purchase_price?: boolean;
+
+    // Bom Associated fields
+    bom_sellable?: boolean;
     minimum_threshold?: number;
     available_to_purchase?: number;
     selling_priority?: number;
     calculated_stock?: number;
-    sync_purchase_price?: boolean;
+
+    barcode?: string;
 }
 
 export interface VariationDownloadAtumInterface {
@@ -126,11 +133,4 @@ export interface VariationMetaDataAtumInterface {
     id?: number;
     key: string;
     value: string;
-}
-
-export interface VariationBOMAtumInterface {
-    bom_id: number;
-    bom_type: string;
-    qty: number;
-    delete: boolean;
 }
