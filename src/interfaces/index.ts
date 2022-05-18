@@ -23,5 +23,5 @@ export * from './comment-atum.interface';
 export * from './setting-atum.interface';
 export * from './tag-atum.interface';
 export * from './inbound-stock-atum.interface';
-
+export * from './supplier-atum.interface';
 export * from './addon-atum.interface';
