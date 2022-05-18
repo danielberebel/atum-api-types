@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -31,7 +31,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@sml/atum-api-types",
+  "name": "atum-api-types",
   "author": "Daniel BeRebel",
   "module": "dist/atum-api-types.esm.js",
   "size-limit": [
