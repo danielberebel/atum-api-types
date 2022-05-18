@@ -1,8 +1,12 @@
-import { OnlineItemInterface } from '../item.interface';
-import { PluginWpInterface } from '../wp/plugin-wp.interface';
+import { PluginWpInterface } from 'wp-api-types';
 
-export interface AddonAtumInterface extends Partial<OnlineItemInterface>, Partial<PluginWpInterface> {
-    key?: string;
-    status?: string;
-    active?: boolean;
+export interface AddonAtumInterface extends Partial<PluginWpInterface> {
+  id?: number;
+  slug?: string;
+  trash?: boolean;
+  deleted?: boolean;
+
+  key?: string;
+  status?: string;
+  active?: boolean;
 }

@@ -1,3 +1,3 @@
-import { TagWcInterface } from '../wc/tag-wc.interface';
+import { TagWcInterface } from 'wc-api-types';
 
 export interface TagAtumInterface extends TagWcInterface {}

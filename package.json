@@ -17,9 +17,9 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "publish": "np --no-tests"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -31,25 +31,30 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@sml/atum-types",
+  "name": "@sml/atum-api-types",
   "author": "Daniel BeRebel",
-  "module": "dist/atum-types.esm.js",
+  "module": "dist/atum-api-types.esm.js",
   "size-limit": [
     {
-      "path": "dist/atum-types.cjs.production.min.js",
+      "path": "dist/atum-api-types.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/atum-types.esm.js",
+      "path": "dist/atum-api-types.esm.js",
       "limit": "10 KB"
     }
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.10.2",
     "husky": "^6.0.0",
+    "np": "^7.6.1",
     "size-limit": "^4.10.2",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "wc-api-types": "^1.1.1",
+    "wp-api-types": "^1.0.0"
   }
 }

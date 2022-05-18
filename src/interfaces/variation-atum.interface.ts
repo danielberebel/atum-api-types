@@ -1,136 +1,136 @@
 import {
-    BooleanStringType,
-    GlobalBooleanStringType,
-    InventoryIterationType,
-    InventorySortingModeType,
-    SelectableInventoriesModeType
-} from '../../types';
+  //   BooleanStringType,
+  GlobalBooleanStringType,
+  InventoryIterationType,
+  InventorySortingModeType,
+  SelectableInventoriesModeType,
+} from '../types';
 import { LinkedBOMAtumInterface } from './product-atum.interface';
 
 export interface VariationAtumInterface {
-    id?: number; // READ-ONLY
-    slug?: string;
-    product_id?: number; // Create-Only
-    parent_id?: number; // READ-ONLY
-    date_created?: string; // READ-ONLY
-    date_created_gmt?: string; // READ-ONLY
-    date_modified?: string; // READ-ONLY
-    date_modified_gmt?: string; // READ-ONLY
-    description?: string; // READ-ONLY
-    permalink?: string; // READ-ONLY
-    sku?: string;
-    price?: string; // READ-ONLY
-    regular_price?: string;
-    sale_price?: string;
-    date_on_sale_from?: string;
-    date_on_sale_from_gmt?: string;
-    date_on_sale_to?: string;
-    date_on_sale_to_gmt?: string;
-    on_sale?: boolean; // READ-ONLY
-    status?: string;
-    purchasable?: boolean; // READ-ONLY
-    virtual?: boolean;
-    downloadable?: boolean;
-    downloads?: Partial<VariationDownloadAtumInterface>[];
-    download_limit?: number;
-    download_expiry?: number;
-    tax_status?: string;
-    tax_class?: string;
-    manage_stock?: boolean;
-    stock_quantity?: number;
-    stock_status?: string;
-    backorders?: string;
-    backorders_allowed?: boolean; // READ-ONLY
-    backordered?: boolean; // READ-ONLY
-    weight?: string;
-    dimensions?: VariationDimensionAtumInterface;
-    shipping_class?: string;
-    shipping_class_id?: string; // READ-ONLY
-    image?: VariationImageAtumInterface;
-    attributes?: VariationAttributeAtumInterface[];
-    menu_order?: number;
-    meta_data?: VariationMetaDataAtumInterface[];
+  id?: number; // READ-ONLY
+  slug?: string;
+  product_id?: number; // Create-Only
+  parent_id?: number; // READ-ONLY
+  date_created?: string; // READ-ONLY
+  date_created_gmt?: string; // READ-ONLY
+  date_modified?: string; // READ-ONLY
+  date_modified_gmt?: string; // READ-ONLY
+  description?: string; // READ-ONLY
+  permalink?: string; // READ-ONLY
+  sku?: string;
+  price?: string; // READ-ONLY
+  regular_price?: string;
+  sale_price?: string;
+  date_on_sale_from?: string;
+  date_on_sale_from_gmt?: string;
+  date_on_sale_to?: string;
+  date_on_sale_to_gmt?: string;
+  on_sale?: boolean; // READ-ONLY
+  status?: string;
+  purchasable?: boolean; // READ-ONLY
+  virtual?: boolean;
+  downloadable?: boolean;
+  downloads?: Partial<VariationDownloadAtumInterface>[];
+  download_limit?: number;
+  download_expiry?: number;
+  tax_status?: string;
+  tax_class?: string;
+  manage_stock?: boolean;
+  stock_quantity?: number;
+  stock_status?: string;
+  backorders?: string;
+  backorders_allowed?: boolean; // READ-ONLY
+  backordered?: boolean; // READ-ONLY
+  weight?: string;
+  dimensions?: VariationDimensionAtumInterface;
+  shipping_class?: string;
+  shipping_class_id?: string; // READ-ONLY
+  image?: VariationImageAtumInterface;
+  attributes?: VariationAttributeAtumInterface[];
+  menu_order?: number;
+  meta_data?: VariationMetaDataAtumInterface[];
 
-    // atum properties
-    purchase_price?: string;
-    supplier_id?: number;
-    supplier_sku?: string;
-    atum_controlled?: boolean;
-    out_stock_date?: string;
-    out_stock_threshold?: number;
+  // atum properties
+  purchase_price?: string;
+  supplier_id?: number;
+  supplier_sku?: string;
+  atum_controlled?: boolean;
+  out_stock_date?: string;
+  out_stock_threshold?: number;
 
-    // metrics
-    inbound_stock?: number;
-    stock_on_hold?: number;
-    sold_today?: number;
-    sales_last_days?: number;
-    reserved_stock?: number;
-    customer_returns?: number;
-    warehouse_damage?: number;
-    lost_in_post?: number;
-    other_logs?: number;
-    out_stock_days?: number;
-    lost_sales?: number;
+  // metrics
+  inbound_stock?: number;
+  stock_on_hold?: number;
+  sold_today?: number;
+  sales_last_days?: number;
+  reserved_stock?: number;
+  customer_returns?: number;
+  warehouse_damage?: number;
+  lost_in_post?: number;
+  other_logs?: number;
+  out_stock_days?: number;
+  lost_sales?: number;
 
-    // Multi Inventory
-    mi_inventories?: number[]; // READ-ONLY
-    multi_inventory: GlobalBooleanStringType; //  'yes' | 'no' | 'global' Global was null
-    inventory_sorting_mode?: InventorySortingModeType;
-    inventory_iteration?: InventoryIterationType;
-    expirable_inventories?: GlobalBooleanStringType;
-    price_per_inventory?: GlobalBooleanStringType;
+  // Multi Inventory
+  mi_inventories?: number[]; // READ-ONLY
+  multi_inventory: GlobalBooleanStringType; //  'yes' | 'no' | 'global' Global was null
+  inventory_sorting_mode?: InventorySortingModeType;
+  inventory_iteration?: InventoryIterationType;
+  expirable_inventories?: GlobalBooleanStringType;
+  price_per_inventory?: GlobalBooleanStringType;
 
-    low_stock_threshold?: number;
-    calc_back_orders?: number;
-    inventory_selection_mode?: SelectableInventoriesModeType;
-    selectable_inventories?: GlobalBooleanStringType;
+  low_stock_threshold?: number;
+  calc_back_orders?: number;
+  inventory_selection_mode?: SelectableInventoriesModeType;
+  selectable_inventories?: GlobalBooleanStringType;
 
-    // Product Levels
-    linked_bom?: LinkedBOMAtumInterface[];
-    is_bom?: boolean;
-    sync_purchase_price?: boolean;
+  // Product Levels
+  linked_bom?: LinkedBOMAtumInterface[];
+  is_bom?: boolean;
+  sync_purchase_price?: boolean;
 
-    // Bom Associated fields
-    bom_sellable?: boolean;
-    minimum_threshold?: number;
-    available_to_purchase?: number;
-    selling_priority?: number;
-    calculated_stock?: number;
+  // Bom Associated fields
+  bom_sellable?: boolean;
+  minimum_threshold?: number;
+  available_to_purchase?: number;
+  selling_priority?: number;
+  calculated_stock?: number;
 
-    barcode?: string;
+  barcode?: string;
 }
 
 export interface VariationDownloadAtumInterface {
-    id?: number;
-    name: string;
-    file: string;
+  id?: number;
+  name: string;
+  file: string;
 }
 
 export interface VariationDimensionAtumInterface {
-    length?: string;
-    width?: string;
-    height?: string;
+  length?: string;
+  width?: string;
+  height?: string;
 }
 
 export interface VariationImageAtumInterface {
-    id: number;
-    date_created?: string;
-    date_created_gmt?: string;
-    date_modified?: string;
-    date_modified_gmt?: string;
-    src?: string;
-    name?: string;
-    alt?: string;
+  id: number;
+  date_created?: string;
+  date_created_gmt?: string;
+  date_modified?: string;
+  date_modified_gmt?: string;
+  src?: string;
+  name?: string;
+  alt?: string;
 }
 
 export interface VariationAttributeAtumInterface {
-    id?: number;
-    name: string;
-    option: string;
+  id?: number;
+  name: string;
+  option: string;
 }
 
 export interface VariationMetaDataAtumInterface {
-    id?: number;
-    key: string;
-    value: string;
+  id?: number;
+  key: string;
+  value: string;
 }

@@ -1,4 +1,4 @@
-import { ShippingWcInterface } from '../wc';
+import { ShippingWcInterface } from 'wc-api-types';
 
 /**
  *
@@ -8,5 +8,5 @@ import { ShippingWcInterface } from '../wc';
  * @extends {ShippingWcInterface}
  */
 export interface ShippingAtumInterface extends ShippingWcInterface {
-    //
+  //
 }
