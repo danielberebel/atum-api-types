@@ -25,3 +25,4 @@ export * from './tag-atum.interface';
 export * from './inbound-stock-atum.interface';
 export * from './supplier-atum.interface';
 export * from './addon-atum.interface';
+export * from './full-export-atum.interface';
